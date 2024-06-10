@@ -1,34 +1,36 @@
-import { useRef } from 'react'
+import { sizeIcons } from '../utils/images'
 
-const options = [
-  { id: 0, option: 'Canvas Print' },
-  { id: 1, option: 'Framed Canvas' },
-  { id: 2, option: 'Framed Print' },
-  { id: 3, option: 'Rolled Print' },
-]
-
-const ProductType = ({ type, setType, selected, setSelected }) => {
-  const selectedRef = useRef()
-
-  const handleSelect = (item) => {
+const ProductType = ({ setType, selected, setSelected }) => {
+  const handleSelect = item => {
     setSelected(item.id)
-    setType(item.option)
-    console.log(type)
+    setType(item.name)
   }
   return (
-    <div className="flex flex-col">
-      <p className="text-left mb-3">Product Type</p>
-      <div className="flex gap-2">
-        {options.map((item, i) => (
+    <div className="flex flex-col mt-5 bg-white text-white p-3 rounded shadow-inner shadow-zinc-400">
+      <p className="text-left mb-3 text-black/80 text-xl font-bold font-serif">
+        Select Frame
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-4 w-[100%]">
+        {sizeIcons.map((item, i) => (
           <div
-            ref={selectedRef}
             onClick={() => handleSelect(item)}
-            className={`border-4 p-2 ${
-              selected === item.id ? `bg-zinc-200` : ''
-            } hover:cursor-pointer rounded-md shadow-md`}
+            className={`flex flex-col justify-center items-center border-4 border-transparent hover:border-yellow-400 hover:cursor-pointer hover:scale-105 transition-all p-1 rounded-md ${
+              selected === item.id ? `border-yellow-400` : ''
+            }`}
             key={i}
           >
-            <p>{item.option}</p>
+            <img src={item.src} className="h-[80px] w-[90px]"></img>
+            <p className="text-black text-xs mt-1">{item.name}</p>
+            {/* <button
+              onClick={() => handleSelect(item)}
+              className={`py-1 px-3 rounded border-4 text-sm my-1 shadow-md shadow-zinc-500 w-[90%] hover:bg-yellow-400 hover:scale-105 transition-all ${
+                selected === item.id
+                  ? `bg-yellow-400 border-yellow-500 text-white font-black scale-105`
+                  : `bg-white text-black`
+              }`}
+            >
+              {item.option}
+            </button> */}
           </div>
         ))}
       </div>

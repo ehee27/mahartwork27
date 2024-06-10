@@ -1,23 +1,28 @@
+import { useState } from 'react'
 import { images } from '../utils/images'
 
+const colors = images.slice(0, 4)
+
 const ProductHero = ({ heroPic }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
   return (
-    <div className="p-2">
-      <div className="flex flex-col justify-center items-center animate-slidedown300 mb-5">
+    <div className="">
+      <div className="flex flex-col justify-center items-center animate-slidedown300 mb-5 bg-black/90 text-white p-5 rounded pt-10">
         <img
-          src={images[`${heroPic}`].src}
-          className="h-80 w-[50] shadow-md shadow-zinc-500"
+          // src={images[`${heroPic}`].src}
+          src={images[currentImageIndex].src}
+          className="h-100 md:h-[600px] shadow-xl shadow-black rounded"
         ></img>
-        <div className="flex flex-col gap-2 text-left my-10">
-          <p>
-            Thanks for stopping by. This piece was inspired by a passion for
-            Chiefs Kingdom, civic pride in our great growing city, and a love of
-            "beat em up video games" from the 90's.
-          </p>
-          <p>
-            It would look super cool hanging in your media room, office or man
-            cave.
-          </p>
+        <div className="flex gap-4 h-[400px] max-w-[600px] mt-10">
+          {colors.map((image, i) => (
+            <img
+              onClick={() => setCurrentImageIndex(i)}
+              key={i}
+              src={images[i].src}
+              className="h-40 w-30 hover:cursor-pointer hover:scale-110 transition-all"
+            ></img>
+          ))}
+          <div className="bg-hero"></div>
         </div>
       </div>
     </div>
