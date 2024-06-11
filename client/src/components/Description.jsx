@@ -1,10 +1,10 @@
 const Description = () => {
   return (
     <div className="flex flex-col text-black p-3 rounded text-left">
-      <p className="text-xl font-serif font-black mb-2">Patrick Mahomes</p>
+      {/* <p className="text-xl font-serif font-black mb-2">Patrick Mahomes</p> */}
       <p>
-        This piece was inspired by a passion for Chiefs Kingdom, civic pride in
-        our great growing city, and a love of "beat em up video games" from the
+        Piece was inspired by a passion for Chiefs Kingdom, civic pride in our
+        great growing city, and a love of "beat em up video games" from the
         90's.
       </p>
       <br></br>
