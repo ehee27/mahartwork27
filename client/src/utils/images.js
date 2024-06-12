@@ -13,11 +13,11 @@ export const sizeImages = [
   { id: 4, src: large },
 ]
 
-export const sizeIcons = [
-  { id: 1, src: CanvasPrint, name: 'Canvas Print' },
-  { id: 2, src: FramedCanvas, name: 'Framed Canvas' },
-  { id: 3, src: FramedPrint, name: 'Framed Print' },
-  { id: 4, src: RolledPrint, name: 'Rolled Print' },
+export const frameIcons = [
+  { id: 1, src: CanvasPrint, name: 'Canvas Print', price: 30.0 },
+  { id: 2, src: FramedCanvas, name: 'Framed Canvas', price: 75.0 },
+  { id: 3, src: FramedPrint, name: 'Framed Print', price: 55.0 },
+  { id: 4, src: RolledPrint, name: 'Rolled Print', price: 0.0 },
 ]
 
 export const getImageUrl = filename => {

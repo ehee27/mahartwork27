@@ -3,7 +3,7 @@ const cors = require('cors')
 const dotenv = require('dotenv')
 dotenv.config()
 const stripe = require('stripe')(
-  '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'
+  'sk_test_51IvqEuDjO58kCqEe3HGHH3C5340zMbDHRCZh2FnnqAErbdBGGd4QYLlGWOT3SFepyS92X0v6gSqjgGqnFZKdsXip00a6GhKsyw'
 )
 const port = process.env.PORT || 4000
 const app = express()
@@ -25,7 +25,7 @@ app.post('/checkout', async (req, res) => {
   //
 
   // 2. Create lineItems from req.body -----------------------------
-  const items = req.bodyitems
+  const items = req.body.items
   let lineItems = []
   //
   items.forEach(item => {
