@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
 const Checkout = () => {
   const { items } = useContext(CartContext)
-  console.log('This is the cart on Checkout', items)
+  // console.log('This is the cart on Checkout', items)
   //
   // CHECKOUT CALLS A FETCH and POSTS the cart
   const checkout = async () => {
